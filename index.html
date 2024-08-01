@@ -114,34 +114,6 @@
         </div>
     </div>
     
-    <script>
-        document.getElementById('menu-button').addEventListener('click', function() {
-            const menuOverlay = document.getElementById('menu-overlay');
-            menuOverlay.classList.toggle('hidden');
-            if (menuOverlay.classList.contains('hidden')) {
-                document.body.style.overflow = 'auto';
-            } else {
-                document.body.style.overflow = 'hidden';
-            }
-        });
-    
-        document.getElementById('close-button').addEventListener('click', function() {
-            document.getElementById('menu-overlay').classList.add('hidden');
-            document.body.style.overflow = 'auto';
-        });
-        window.addEventListener('resize', function() {
-        const menuOverlay = document.getElementById('menu-overlay');
-        const menuButton = document.getElementById('menu-button');
-        const screenWidth = window.innerWidth;
-
-       // Assuming 768px as the breakpoint for medium screens
-       if (screenWidth >= 768) {
-        menuOverlay.classList.add('hidden');
-        document.body.style.overflow = 'auto';
-    }
-    });
-    </script>
- 
     <div class="hidden md:block">
         <div class="flex flex-row justify-between">
             <div class="flex fex-row pt-10 pl-10">
@@ -196,13 +168,15 @@
                  <h1 class="font-bold font-sans text-5xl ">Quick loans for<br><span class="text-blue-700">clean energy<br> access</span></h1>
                 <p class=" py-10 text-xl">Skip the delays of traditional loan processes. Access clean energy financing for your home or business in under 24 hours!</p>
                 <div class="flex flex-row">
-                    <button class="bg-black text-white flex items-center justify-center pl-4 p-2.5 rounded-md mr-2">Get on Android<span><img src="public/images/SmU+Hu3wHkAAAAAElFTkSuQmCC.png" class=" ml-3 mr-4 pt-1"></span></button>
+                    <button class="bg-black text-white flex items-center justify-center pl-4 p-2.5 rounded-md mr-2">Get on Android<span><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="64" height="64" viewBox="0 0 64 64" class="w-8 h-8 ml-2">
+                        <path fill="#37d0ee" d="M56.005,30.771l-37-21.5c-0.619-0.359-1.382-0.361-2.003-0.004C16.382,9.624,16,10.285,16,11v43	c0,0.715,0.382,1.376,1.002,1.733C17.312,55.911,17.655,56,18,56c0.347,0,0.694-0.09,1.005-0.271l37-21.5	C56.621,33.871,57,33.212,57,32.5S56.621,31.129,56.005,30.771z"></path><path fill="#fd3c4f" d="M56.005,34.223l-6.88,3.998l-6.488-5.724L16.628,55.446c0.113,0.108,0.236,0.207,0.374,0.287 C17.312,55.911,17.655,56,18,56c0.347,0,0.694-0.09,1.005-0.271l37-21.5C56.621,33.871,57,33.212,57,32.5c0-0.001,0-0.002,0-0.003 C56.998,33.208,56.62,33.866,56.005,34.223z"></path><path fill="#ffce29" d="M56.005,30.771c0.615,0.358,0.994,1.015,0.995,1.726c0-0.001,0-0.002,0-0.003 c0-0.712-0.379-1.371-0.995-1.729l-37-21.5C18.694,9.084,18.347,8.994,18,8.994c-0.345,0-0.688,0.089-0.998,0.267 c-0.139,0.08-0.261,0.18-0.374,0.287l26.009,22.949l6.488-5.724L56.005,30.771z"></path><path fill="orange" d="M56.005,34.223c0.615-0.358,0.994-1.015,0.995-1.726c-0.001-0.711-0.379-1.369-0.995-1.726 l-6.88-3.998l-6.488,5.724l6.488,5.724L56.005,34.223z"></path><ellipse cx="32" cy="61" opacity=".3" rx="20" ry="3"></ellipse><path d="M52.125,36.484c-1.389-2.387-4.448-3.199-6.835-1.811L30.496,43.27	c-2.388,1.388-3.199,4.448-1.812,6.835L52.125,36.484C52.125,36.484,52.125,36.484,52.125,36.484z" opacity=".15"></path><path fill="#fff" d="M19.005,9.271c-0.619-0.359-1.382-0.361-2.003-0.004C16.382,9.624,16,10.285,16,11	v31.067c2.762,0,5-2.239,5-5V17.95c0-0.771,0.836-1.252,1.502-0.865l3.944,2.292c2.387,1.387,5.447,0.576,6.835-1.811L19.005,9.271z" opacity=".3"></path><line x1="19.5" x2="19.5" y1="17.5" y2="21.5" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="3"></line>
+                        </svg></span></button>
                     <button class="bg-black text-white flex items-center justify-center pl-4 ml-2 p-2.5 rounded-md">Get on iphone<span><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="50" height="30" viewBox="0,0,256,256">
                      <g fill="#f9f8f8" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(10.66667,10.66667)"><path d="M16.125,1c-1.153,0.067 -2.47667,0.70934 -3.26367,1.52734c-0.711,0.744 -1.27197,1.84897 -1.04297,2.91797c1.253,0.033 2.51067,-0.62598 3.26367,-1.45898c0.703,-0.779 1.23597,-1.86633 1.04297,-2.98633zM16.19336,5.44336c-1.809,0 -2.56536,1.11133 -3.81836,1.11133c-1.289,0 -2.46734,-1.04102 -4.02734,-1.04102c-2.122,0.001 -5.34766,1.96666 -5.34766,6.59766c0,4.213 3.81766,8.88867 5.97266,8.88867c1.309,0.013 1.62634,-0.82303 3.40234,-0.83203c1.778,-0.013 2.16166,0.84303 3.47266,0.83203c1.476,-0.011 2.6287,-1.63297 3.4707,-2.91797c0.604,-0.92 0.85231,-1.38969 1.32031,-2.42969c-3.473,-0.88 -4.164,-6.48067 0,-7.63867c-0.786,-1.341 -3.08031,-2.57031 -4.44531,-2.57031z"></path></g></g>
                     </svg></span></button>
                 </div>
             </div>
-            <div class="flex-1 aspect-square pb-4"><img src="public/images/shutterstock_2336466679.heic.0f7e1e1c.jpeg" class="aspect-square w-[100%] h-full object-cover"></div>
+            <div class="flex-1 aspect-square pb-4"><img src="public/images/shutterstock_2336466679.heic.0f7e1e1c.jpeg" class=" object-cover"></div>
         </div>
     </div>
 
@@ -361,7 +335,7 @@
             <div class="flex flex-col pt-16">
                 <p class="text-white text-2xl px-5 ">Save money for your home or business by eliminating running costs on diesel and petrol generators. <br><br> 
                     Run your clean energy sale and installation business more efficiently with an inventory finance loan to support expansion.<br><br>
-                    <p class="pl-5 text-blue-700 text-2xl flex font-bold cursor-pointer">Check offers<span>  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="blue" class="w-4 ml-2 mt-3 h-4 cursor-pointer">
+                    <p class="pl-5 text-blue-700 text-2xl flex font-bold cursor-pointer">Check offers<span>  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="blue" class="w-4 ml-2 mt-2.5 h-5 cursor-pointer">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
                     </svg></span></p>
                 </p>
