@@ -69,6 +69,34 @@
             </svg>
         </button>
       
+        <script>
+            document.getElementById('menu-button').addEventListener('click', function() {
+                const menuOverlay = document.getElementById('menu-overlay');
+                menuOverlay.classList.toggle('hidden');
+                if (menuOverlay.classList.contains('hidden')) {
+                    document.body.style.overflow = 'auto';
+                } else {
+                    document.body.style.overflow = 'hidden';
+                }
+            });
+        
+            document.getElementById('close-button').addEventListener('click', function() {
+                document.getElementById('menu-overlay').classList.add('hidden');
+                document.body.style.overflow = 'auto';
+            });
+        
+            window.addEventListener('resize', function() {
+                const menuOverlay = document.getElementById('menu-overlay');
+                const screenWidth = window.innerWidth;
+        
+                // Assuming 768px as the breakpoint for medium screens
+                if (screenWidth >= 768) {
+                    menuOverlay.classList.add('hidden');
+                    document.body.style.overflow = 'auto';
+                }
+            });
+        </script>
+        
         <div>
             <h2 class="font-bold pl-5 text-2xl pt-32 pb-10">Products</h2>
             <div class="grid grid-rows-3 flex-col">
@@ -116,8 +144,8 @@
     
     <div class="hidden md:block">
         <div class="flex flex-row justify-between">
-            <div class="flex fex-row pt-10 pl-10">
-                <div class="pl-10">
+            <div class="flex fex-row pt-10 lg:pl-10 xl:pl-20">
+                <div>
                     <img src="public/images/Group 3243.dc2bf25d (1).svg" class="w-48 h-12">
                 </div>
                 <div class="flex flex-row pl-8 pt-3 font-bold  text-gray-600 cursor-pointer hover:text-blue-800"> 
@@ -133,7 +161,7 @@
                 </div>
             </div>   
             
-            <div class= "flex flex-row pt-10 pr-20">
+            <div class= "flex flex-row pt-10 lg:pr-10 xl:pr-20">
                 <p class="font-bold pt-3 pr-5 cursor-pointer  text-gray-600 hover:text-blue-800 text-1xs">Log In</p>
                 <div class="flex flex-row">
                     <button class="bg-blue-800 text-white pl-3 py-3  rounded-md flex flex-row cursor-pointer">Open An Account <span><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="mx-2 w-5 h-4 mt-1 rounded-md bg-gray-200 bg-opacity-30  py-0 ">
@@ -146,8 +174,8 @@
     </div>
 
     <div class="hidden md:block">
-        <div class="pl-20  flex gap-8 pt-28 p-4 ">
-            <div class="flex-1 xl:pl-28"> <h1 class="font-bold font-sans md:text-5xl lg:text-5xl xl:text-7xl">Quick loans for<br><span class="text-blue-700">clean energy<br> access</span></h1>
+        <div class="lg:pl-10 xl:pl-20  flex gap-8 pt-28 p-4 ">
+            <div class="flex-1"> <h1 class="font-bold font-sans md:text-5xl lg:text-5xl xl:text-7xl">Quick loans for<br><span class="text-blue-700">clean energy<br> access</span></h1>
                 <p class="py-10 text-xl">Skip the delays of traditional loan processes. Access clean<br> energy financing for your home or business in under 24 hours!</p>
                 <div class="flex flex-row">
                     <button class="bg-black text-white flex items-center justify-center pl-4  ml-0 p-2.5 rounded-md mr-2">Get on Android<span><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="50" height="30" viewBox="0 0 48 48">
@@ -181,7 +209,7 @@
     </div>
 
     <div class="hidden md:block">
-        <div class= "mt-20 px-20 flex flex-row justify-between py-8" style="background-color: #f6f8ff;">
+        <div class= "mt-20 lg:px-10 xl:px-20 flex flex-row justify-between py-8" style="background-color: #f6f8ff;">
             <div>
                 <p class=" text-xl font-medium pb-10">Trusted Partners</p>
                 <img src="public/images/mercy-corps-grey.69f530a9.svg">  
@@ -205,44 +233,73 @@
         </div>
     </div>
 
-    <div class="pr-0 lg:pr-18 xl:pr-20 pl-0 lg:pl-16 xl:pl-28 " style="background-color: #f6f6f6;">
-        <p class="hidden md:block text-5xl font-bold pl-20 lg:pl-4 xl:pl-20 pt-24">You don't need to be a<br> landowner to get loans </p>
-        <p class="md:hidden text-5xl font-bold pl-5 pt-24">You don't need to be a landowner to get loans </p>
+    <div class="pr-5 pl-5 lg:pr-10 xl:pr-20 lg:pl-10 xl:pl-20 " style="background-color: #f6f6f6;">
+        <p class="hidden md:block text-5xl font-bold pt-24">You don't need to be a<br> landowner to get loans </p>
+        <p class="md:hidden text-5xl font-bold pt-24">You don't need to be a landowner to get loans </p>
 
-        <div class="w-full pt-14 md:pt-20 md:pb-20 flex flex-col md:flex-row xl:justify-between px-4 lg:px-18 xl:px-20 gap-8 lg:gap-10 xl:gap-60">
+        <div class="hidden md:block">
+            <div class="w-full pt-14 md:pt-20 md:pb-20 flex flex-col md:flex-row xl:justify-between gap-8 lg:gap-10 xl:gap-60">
+                <div class="w-full"> 
+                    <div class="flex items-center justify-center w-full rounded-2xl overflow-hidden">
+                        <img src="public/images/body 2.jpg" alt="Loans Img" class="w-full h-full object-cover rounded-2xl">
+                    </div>
+                    <h1 class="mt-6 text-2xl md:text-xl text-blue-700">Stock up your solar business <span class="text-black">with<br>inventory financing</span>
+                    </h1>
+                </div>
+        
+                <div class=" w-full"> 
+                    <div class=" flex items-center justify-center w-full rounded-2xl overflow-hidden">
+                        <img src="public/images/jjj.jpg" alt="Loans Img" class="w-full h-full object-cover rounded-2xl">
+                    </div>
+                    <h1 class="mt-6 text-2xl md:text-xl text-blue-700">Access solar financing <span class="text-black">for your home or your business</span>
+                    </h1>
+                </div>
+        
+                <div class="w-full"> 
+                    <div class=" flex items-center justify-center w-full rounded-2xl overflow-hidden">
+                        <img src="public/images/hh3.jpg" alt="Loans Img" class="w-full h-full object-cover rounded-2xl">
+                    </div>
+                    <h1 class="mt-6 text-2xl md:text-xl text-black">Partner with us to make <span class="text-blue-700">clean energy<br>appliances accessible <span class="text-black">to all</span></span>
+                    </h1>
+                </div>
+            </div>
+        </div>
            
-            <div class="w-full"> 
-                <div class="flex items-center justify-center w-full rounded-2xl overflow-hidden">
-                    <img src="public/images/body 2.jpg" alt="Loans Img" class="w-full h-full object-cover rounded-2xl">
+        <div class="md:hidden">
+            <div class="w-full pt-14 flex flex-col gap-8 ">
+                <div class="w-full"> 
+                    <div class="flex items-center justify-center w-full rounded-2xl overflow-hidden">
+                        <img src="public/images/body 2.jpg" alt="Loans Img" class="w-full h-full object-cover rounded-2xl">
+                    </div>
+                    <h1 class="mt-6 text-2xl md:text-xl text-blue-700">Stock up your solar business <span class="text-black">with<br>inventory financing</span>
+                    </h1>
                 </div>
-                <h1 class="mt-6 text-2xl md:text-xl text-blue-700">Stock up your solar business <span class="text-black">with<br>inventory financing</span>
-                </h1>
-            </div>
-    
-            <div class=" w-full"> 
-                <div class=" flex items-center justify-center w-full rounded-2xl overflow-hidden">
-                    <img src="public/images/jjj.jpg" alt="Loans Img" class="w-full h-full object-cover rounded-2xl">
+        
+                <div class=" w-full"> 
+                    <div class=" flex items-center justify-center w-full rounded-2xl overflow-hidden">
+                        <img src="public/images/jjj.jpg" alt="Loans Img" class="w-full h-full object-cover rounded-2xl">
+                    </div>
+                    <h1 class="mt-6 text-2xl md:text-xl text-blue-700">Access solar financing <span class="text-black">for your home or your business</span>
+                    </h1>
                 </div>
-                <h1 class="mt-6 text-2xl md:text-xl text-blue-700">Access solar financing <span class="text-black">for your home or your business</span>
-                </h1>
-            </div>
-    
-            <div class="w-full"> 
-                <div class=" flex items-center justify-center w-full rounded-2xl overflow-hidden">
-                    <img src="public/images/hh3.jpg" alt="Loans Img" class="w-full h-full object-cover rounded-2xl">
+        
+                <div class="w-full"> 
+                    <div class=" flex items-center justify-center w-full rounded-2xl overflow-hidden">
+                        <img src="public/images/hh3.jpg" alt="Loans Img" class="w-full h-full object-cover rounded-2xl">
+                    </div>
+                    <h1 class="mt-6 text-2xl md:text-xl text-black">Partner with us to make <span class="text-blue-700">clean energy<br>appliances accessible <span class="text-black">to all</span></span>
+                    </h1>
                 </div>
-                <h1 class="mt-6 text-2xl md:text-xl text-black">Partner with us to make <span class="text-blue-700">clean energy<br>appliances accessible <span class="text-black">to all</span></span>
-                </h1>
             </div>
         </div>
 
         <div class="flex flex-col md:flex-row pb-10">
             <div>
-                <p class="text-5xl font-bold pl-5 md:pl-20 lg:pl-4 xl:pl-20 pt-24">What our customers<br>say about us</p>
-                <p class="text-xl pt-10 pl-5 md:pl-20 lg:pl-4 xl:pl-20">Here is what some of them are saying</p>
+                <p class="text-5xl font-bold xl:pr-40 pt-24">What our customers<br>say about us</p>
+                <p class="text-xl pt-10">Here is what some of them are saying</p>
             </div> 
             
-            <div class="pt-2 md:pt-36 pl-5 md:pl-96 xl:pl-96 lg:pl-20">
+            <div class="pt-2 md:pt-36  xl:pl-96 lg:pl-20">
             <svg width="199" height="37" viewBox="0 0 199 37" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <rect width="37" height="37" fill="#00B67A"/>
                 <path d="M15 15.5L18.5 7L21 15.5H31L10.5 30.5L13.5 21.5L6 15.5H15Z" fill="white"/>
@@ -286,21 +343,21 @@
         <div class="hidden md:block">
             <div class="flex flex-row gap-6 pt-10 pb-3 p-4">
                 <button class="bg-white opacity-30 rounded-full w-6 h-6 items-center justify-center mt-24"><</button>
-                <div class="flex-1 p-4 px-5 rounded-lg" style="background-color: #F2F4F7">
+                <div class="flex-1 p-4 rounded-lg" style="background-color: #F2F4F7">
                     <p class="py-5 font-bold text-2xl ">"After God you guys are the best 😘...<br>this app has been saving me... I love<br> payhippo"</p>
                     <div class="flex flex-row"> 
                         <p class="font-bold pt-2.5 text-2xl">.</p>
                         <p class="pt-5 pb-3 text-xl pl-2">Folly Adeks</p>
                     </div>
                 </div>
-                <div class="flex-1 p-4 px-5 rounded-lg" style="background-color: #F2F4F7">
+                <div class="flex-1 p-4 rounded-lg" style="background-color: #F2F4F7">
                     <p class="py-5 font-bold text-2xl ">"Very good Loan application with fast disbursement and professional service<br>👍👏"</p>
                     <div class="flex flex-row"> 
                         <p class="font-bold pt-2.5 text-2xl">.</p>
                         <p class="pt-5 pb-3 text-xl pl-2">Matthew Askas</p>
                     </div>
                 </div>
-                <div class="flex-1 p-4 px-5 rounded-lg" style="background-color: #F2F4F7">
+                <div class="flex-1 p-4 rounded-lg" style="background-color: #F2F4F7">
                     <p class="py-5 font-bold text-2xl ">"My experience with payhippo has been<br> the best. Don't let us down"</p>
                     <div class="flex flex-row"> 
                         <p class="font-bold pt-2.5 text-2xl">.</p>
@@ -315,11 +372,13 @@
         </div>
     </div>
 
-    <div class="hidden md:block bg-black pt-36 pb-24 lg:px-20 xl:px-44">
+    <div class="hidden md:block bg-black pt-36 pb-24 lg:px-10 xl:px-20">
         <div class="flex flex-row justify-between">
-            <img src="public/images/MacBook Pro 16-inch Space Black Left.2a218525.png" class="pr-6">
-            <div class="flex flex-col pt-16 lg:pl-6 xl:pl-0">
-                <p class="text-white text-2xl lg:text-1xl xl:text-2xl">Save money for your home or business by<br> eliminating running costs on diesel and<br>petrol generators. <br><br> 
+            <div class="">
+                <img src="public/images/MacBook Pro 16-inch Space Black Left.2a218525.png">
+            </div>
+            <div class="flex flex-col pt-16">
+                <p class="text-white text-2xl lg:text-xl xl:text-2xl">Save money for your home or business by<br> eliminating running costs on diesel and<br>petrol generators. <br><br> 
                     Run your clean energy sale and installation<br> business more efficiently with an inventory<br> finance loan to support expansion.<br><br>
                     <p class="text-blue-700 text-2xl flex font-bold cursor-pointer">Check offers<span>  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="blue" class="w-4 ml-2 mt-3 h-4 cursor-pointer">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
@@ -331,11 +390,11 @@
 
     <div class="md:hidden bg-black pt-10 pb-12 px-5">
         <div class="flex flex-col justify-between">
-            <img src="public/images/MacBook Pro 16-inch Space Black Left.2a218525.png" class="pl-5 w-full h-full">
+            <img src="public/images/MacBook Pro 16-inch Space Black Left.2a218525.png">
             <div class="flex flex-col pt-16">
-                <p class="text-white text-2xl px-5 ">Save money for your home or business by eliminating running costs on diesel and petrol generators. <br><br> 
+                <p class="text-white text-2xl">Save money for your home or business by eliminating running costs on diesel and petrol generators. <br><br> 
                     Run your clean energy sale and installation business more efficiently with an inventory finance loan to support expansion.<br><br>
-                    <p class="pl-5 text-blue-700 text-2xl flex font-bold cursor-pointer">Check offers<span>  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="blue" class="w-4 ml-2 mt-2.5 h-5 cursor-pointer">
+                    <p class=" text-blue-700 text-2xl flex font-bold cursor-pointer">Check offers<span>  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="blue" class="w-4 ml-2 mt-2.5 h-5 cursor-pointer">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
                     </svg></span></p>
                 </p>
@@ -344,11 +403,11 @@
     </div>
 
     <div class="bg-custom-gradient pt-24 md:pt-44">
-        <div class="pl-5 md:pl-44 lg:pl-24 xl:pl-44">
+        <div class="pl-5 lg:pl-10 xl:pl-20">
             <p class="font-bold text-5xl text-white">Our Footprint</p>
         </div>
 
-        <div class="md:grid grid-rows-1 grid-cols-3 gap-8 px-5 pl-5 md:px-44 lg:px-24 xl:px-44 pt-5 pb-5 lg:pb-20">
+        <div class="md:grid grid-rows-1 grid-cols-3 gap-8 px-5 lg:px-10 xl:px-20 pt-5 pb-5 lg:pb-20">
             <div class="mt-10 p-4  text-3xl md:text-4xl font-bold text-white flex flex-col items-center justify-center rounded-2xl" style="background-color: #323232bb;">
                 <p class="pl-5">5,000</p>
                 <p class="text-xl font-normal pt-2">Users on our platform</p>
@@ -372,7 +431,7 @@
     </div>
 
     <div class="bg-white flex flex-col md:justify-between md:flex-row">
-         <p class="pt-16 pl-5 md:pl-44 lg:pl-24 xl:pl-44 font-bold text-black text-5xl">FAQs</p>
+         <p class="pt-16 pl-5 lg:pl-10 xl:pl-20 font-bold text-black text-5xl">FAQs</p>
          
     <div class=" rounded-xl my-16 border-2 mx-5 md:mr-44  border-gray-300 max-w-3xl">
         <div class="grid grid-rows-12 ">
@@ -455,7 +514,7 @@
     <hr class="thick-hr">
 
     <div class="flex flex-col md:flex-row md:items-center md:justify-between pb-20">
-        <div class="pl-5 md:pl-44 lg:pl-24 xl:pl-44 pt-12 flex flex-col leading-8 md:leading-10">
+        <div class="pl-5 lg:pl-10 xl:pl-20 pt-12 flex flex-col leading-8 md:leading-10">
             <p class="font-bold">Products</p>
             <p class="font-semibold cursor-pointer">Asset Financing</p>
             <p class="font-semibold">Clean Energy Appliances<span class="font-normal rounded-full text-xs p-1 ml-2" style="background-color: #EBEFFF;">Coming Soon</span></p>
@@ -476,7 +535,7 @@
             <p class="font-semibold cursor-pointer">Terms of Services</p>
             <p class="font-semibold cursor-pointer">Privacy Policy</p>
         </div>
-        <div class="pl-5 md:pr-44 pt-12 flex flex-col leading-8 md:leading-10">
+        <div class="pl-5 md:pr-20 pt-12 flex flex-col leading-8 md:leading-10">
             <p class="font-bold">Contacts</p>
             <p class="font-semibold ">174B Corporation Drive, Dolphin Estate, Ikoyi, Lagos, Nigeria.</p>
             <p class="font-semibold">Customer Support: 02013309455</p>
