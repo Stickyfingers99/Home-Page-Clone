@@ -1,0 +1,14 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+.custom-bg {
+    background-color: #89A54D; /* Using a custom color defined in Tailwind config */
+  }
+  /* Custom Styles */
+.text-customGreen {
+  color: #89A54D;
+}
+.bg-customGreen {
+  background-color: #89A54D;
+}
